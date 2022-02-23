@@ -47,8 +47,11 @@ public class Point3d {
     }
 
     //Сравнение двух объектов
-    public static boolean Compare(Point3d object, Point3d object1) {
-        return object.equals(object1);
+    public boolean compare (Point3d point) {
+        if (point.xCoord == xCoord && point.yCoord == yCoord && point.zCoord == zCoord) {
+            return true;
+        }
+        return false;
     }
 
     //Вычисление расстояния между точками
