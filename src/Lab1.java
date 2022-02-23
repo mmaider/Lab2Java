@@ -14,15 +14,15 @@ public class Lab1 {
             }
         }
         if ( firstPoint.compare(secondPoint) || firstPoint.compare(thirdPoint) || secondPoint.compare(thirdPoint) ) {
-            System.out.println("you have entered same point more than once");
+            System.out.println("Two same points");
         } else {
-            System.out.print("Square = " + String.format("%.2f %n", computerArea(firstPoint, secondPoint, thirdPoint)));
+            System.out.print("Square = " + String.format("%.2f %n", computeArea(firstPoint, secondPoint, thirdPoint)));
         }
 
     }
 
     //Площадь треугольника
-    public static double computerArea(Point3d object, Point3d object1, Point3d object2) {
+    public static double computeArea(Point3d object, Point3d object1, Point3d object2) {
         Point3d point = new Point3d();
         double AB = point.distanceTo(object, object1);
         double BC = point.distanceTo(object1, object2);
