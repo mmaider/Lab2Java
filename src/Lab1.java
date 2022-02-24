@@ -13,10 +13,10 @@ public class Lab1 {
                 }
             }
         }
-        if ( firstPoint.compare(secondPoint) || firstPoint.compare(thirdPoint) || secondPoint.compare(thirdPoint) ) {
+        if (firstPoint.compare(secondPoint) || firstPoint.compare(thirdPoint) || secondPoint.compare(thirdPoint)) {
             System.out.println("Two same points");
         } else {
-            System.out.print("Square = " + String.format("%.2f %n", computeArea(firstPoint, secondPoint, thirdPoint)));
+            System.out.print("Square = " + computeArea(firstPoint, secondPoint, thirdPoint));
         }
 
     }
@@ -28,7 +28,6 @@ public class Lab1 {
         double BC = point.distanceTo(object1, object2);
         double CA = point.distanceTo(object2, object);
         double p = (AB + BC + CA) / 2;
-        double S = Math.sqrt(p * (p - AB) * (p - BC) * (p - CA));
-        return S;
+        return Point3d.round(Math.sqrt(p * (p - AB) * (p - BC) * (p - CA)));
     }
 }

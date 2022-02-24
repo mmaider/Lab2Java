@@ -1,3 +1,6 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Point3d extends Point2d {
     //Объявление переменной z
     private double zCoord;
@@ -33,7 +36,13 @@ public class Point3d extends Point2d {
 
     //Вычисление расстояния
     public double distanceTo(Point3d object, Point3d object1) {
-        double distance = Math.sqrt(Math.pow(object1.getX() - object.getX(), 2) + Math.pow(object1.getY() - object.getY(), 2) + Math.pow(object1.getZ() - object.getZ(), 2));
+        double distance = round(Math.sqrt(Math.pow(object1.getX() - object.getX(), 2) + Math.pow(object1.getY() - object.getY(), 2) + Math.pow(object1.getZ() - object.getZ(), 2)));
         return distance;
+    }
+
+    public static double round(double value) {
+        BigDecimal bd = new BigDecimal(Double.toString(value));
+        bd = bd.setScale(2, RoundingMode.HALF_UP);
+        return bd.doubleValue();
     }
 }
